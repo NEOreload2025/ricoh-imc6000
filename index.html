@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RICOH IM C6000 彩色多功能事務機 ｜ 銷售・出租・維修服務</title>
+<meta name="description" content="RICOH IM C6000 A3 彩色雷射多功能事務機，每分鐘 60 張高速輸出、1200dpi 高解析。提供購買、租賃與專業維修耗材服務，歡迎來電或加 LINE 洽詢。">
+<style>
+  :root{
+    --brand:#d7000f;        /* Ricoh 紅 */
+    --brand-dark:#a3000b;
+    --ink:#1a1a1a;
+    --muted:#5a6472;
+    --bg:#ffffff;
+    --soft:#f5f7fa;
+    --line:#e4e8ee;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC",system-ui,-apple-system,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* 導覽列 */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .logo{font-weight:800;font-size:18px;letter-spacing:.5px}
+  .logo span{color:var(--brand)}
+  .nav-links{display:flex;gap:26px;font-size:15px;font-weight:500}
+  .nav-links a{color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--brand)}
+  .nav-cta{background:var(--brand);color:#fff;padding:9px 18px;border-radius:999px;
+    font-weight:700;font-size:14px;transition:background .2s}
+  .nav-cta:hover{background:var(--brand-dark)}
+  @media(max-width:720px){.nav-links{display:none}}
+
+  /* 主視覺 */
+  .hero{background:linear-gradient(135deg,#fafbfc 0%,#eef1f6 100%);
+    padding:64px 0 72px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .badge{display:inline-block;background:#fff;border:1px solid var(--line);
+    color:var(--brand);font-weight:700;font-size:13px;padding:6px 14px;
+    border-radius:999px;margin-bottom:20px}
+  .hero h1{font-size:42px;line-height:1.25;font-weight:800;letter-spacing:-.5px}
+  .hero h1 b{color:var(--brand)}
+  .hero p.lead{font-size:18px;color:var(--muted);margin:18px 0 28px;max-width:46ch}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;
+    font-weight:700;font-size:16px;transition:transform .15s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--brand);color:#fff;box-shadow:0 8px 20px rgba(215,0,15,.25)}
+  .btn-line{background:#06c755;color:#fff;box-shadow:0 8px 20px rgba(6,199,85,.25)}
+  .hero-visual{background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px;text-align:center;box-shadow:0 20px 50px rgba(20,30,50,.08)}
+  .printer{font-size:96px;line-height:1;margin-bottom:14px}
+  .hero-visual .model{font-weight:800;font-size:20px}
+  .hero-visual .sub{color:var(--muted);font-size:14px;margin-top:4px}
+  @media(max-width:820px){
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    .hero h1{font-size:32px}
+  }
+
+  /* 規格條 */
+  .specs{padding:54px 0}
+  .section-title{text-align:center;margin-bottom:38px}
+  .section-title h2{font-size:30px;font-weight:800}
+  .section-title p{color:var(--muted);margin-top:8px}
+  .spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .spec-card{background:var(--soft);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 20px;text-align:center}
+  .spec-card .num{font-size:34px;font-weight:800;color:var(--brand);line-height:1.1}
+  .spec-card .unit{font-size:15px;color:var(--muted);font-weight:600}
+  .spec-card .label{margin-top:8px;font-size:14px;color:var(--ink);font-weight:600}
+  @media(max-width:720px){.spec-grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* 特色 */
+  .features{padding:54px 0;background:var(--soft)}
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .feat-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 24px}
+  .feat-card .ico{font-size:34px;margin-bottom:14px}
+  .feat-card h3{font-size:18px;margin-bottom:8px}
+  .feat-card p{color:var(--muted);font-size:15px}
+  @media(max-width:820px){.feat-grid{grid-template-columns:1fr}}
+
+  /* 服務（銷售/出租/維修） */
+  .services{padding:54px 0}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc-card{border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;
+    position:relative;overflow:hidden;transition:box-shadow .25s,transform .2s}
+  .svc-card:hover{box-shadow:0 16px 40px rgba(20,30,50,.1);transform:translateY(-3px)}
+  .svc-card .tag{font-size:13px;font-weight:700;color:var(--brand);letter-spacing:1px}
+  .svc-card h3{font-size:22px;margin:10px 0 12px}
+  .svc-card ul{list-style:none;color:var(--muted);font-size:15px}
+  .svc-card li{padding:6px 0 6px 24px;position:relative}
+  .svc-card li::before{content:"✓";position:absolute;left:0;color:var(--brand);font-weight:800}
+  @media(max-width:820px){.svc-grid{grid-template-columns:1fr}}
+
+  /* 詳細規格表 */
+  .spectable{padding:54px 0;background:var(--soft)}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);
+    overflow:hidden;border:1px solid var(--line)}
+  th,td{text-align:left;padding:16px 22px;border-bottom:1px solid var(--line);font-size:15px}
+  th{background:#fafbfc;color:var(--muted);font-weight:700;width:38%}
+  tr:last-child td,tr:last-child th{border-bottom:none}
+
+  /* 聯絡 CTA */
+  .contact{padding:64px 0;text-align:center;
+    background:linear-gradient(135deg,var(--brand) 0%,var(--brand-dark) 100%);color:#fff}
+  .contact h2{font-size:32px;font-weight:800}
+  .contact p{opacity:.92;margin:14px 0 30px;font-size:17px}
+  .contact-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn-white{background:#fff;color:var(--brand)}
+  .btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5)}
+  .contact-info{margin-top:26px;font-size:16px;line-height:2;opacity:.95}
+
+  /* 頁尾 */
+  footer{padding:34px 0;text-align:center;color:var(--muted);font-size:14px}
+  footer .logo{display:inline-block;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">RICOH <span>IM C6000</span></div>
+    <nav class="nav-links">
+      <a href="#specs">規格亮點</a>
+      <a href="#features">產品特色</a>
+      <a href="#services">服務方案</a>
+      <a href="#contact">聯絡我們</a>
+    </nav>
+    <a href="#contact" class="nav-cta">立即洽詢</a>
+  </div>
+</header>
+
+<!-- 主視覺 -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">A3 彩色雷射多功能事務機</span>
+      <h1>RICOH <b>IM C6000</b><br>高速彩色，一機搞定辦公文件</h1>
+      <p class="lead">每分鐘 60 張高速輸出、1200dpi 高解析影像，影印、列印、掃描、傳真一次到位。為高印量辦公環境而生，穩定可靠、操作直覺。</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">📞 來電洽詢報價</a>
+        <a href="#contact" class="btn btn-line">💬 加 LINE 詢問</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="printer">🖨️</div>
+      <div class="model">RICOH IM C6000</div>
+      <div class="sub">Color Laser Multifunction Printer</div>
+    </div>
+  </div>
+</section>
+
+<!-- 規格亮點 -->
+<section class="specs" id="specs">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>規格亮點</h2>
+      <p>專為高印量、講求效率的辦公環境設計</p>
+    </div>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="num">60<span class="unit"> ppm</span></div>
+        <div class="label">彩色／黑白<br>每分鐘輸出張數</div>
+      </div>
+      <div class="spec-card">
+        <div class="num">1200<span class="unit"> dpi</span></div>
+        <div class="label">高解析<br>列印畫質</div>
+      </div>
+      <div class="spec-card">
+        <div class="num">240<span class="unit"> ipm</span></div>
+        <div class="label">單次雙面掃描<br>每分鐘影像數</div>
+      </div>
+      <div class="spec-card">
+        <div class="num">4,700<span class="unit"> 張</span></div>
+        <div class="label">最大<br>進紙容量</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 產品特色 -->
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>產品特色</h2>
+      <p>不只是事務機，更是辦公效率的核心</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="ico">⚡</div>
+        <h3>高速不間斷</h3>
+        <p>每分鐘 60 張彩色高速輸出，搭配大容量進紙，面對大量文件也能輕鬆應付，減少等待時間。</p>
+      </div>
+      <div class="feat-card">
+        <div class="ico">🎨</div>
+        <h3>專業彩色畫質</h3>
+        <p>1200×1200 dpi 高解析輸出，色彩飽滿銳利，簡報、型錄、海報都能呈現專業質感。</p>
+      </div>
+      <div class="feat-card">
+        <div class="ico">📑</div>
+        <h3>單次雙面掃描</h3>
+        <p>單通道送稿器（SPDF）一次走紙即完成雙面掃描，每分鐘高達 240 張影像，文件數位化又快又準。</p>
+      </div>
+      <div class="feat-card">
+        <div class="ico">📱</div>
+        <h3>智慧大型觸控</h3>
+        <p>如同操作平板般直覺的大型觸控面板，介面清晰、上手快速，人人都會用。</p>
+      </div>
+      <div class="feat-card">
+        <div class="ico">🔄</div>
+        <h3>Always Current 技術</h3>
+        <p>採用 ACT 平台，可透過網路持續更新功能與線上服務，讓機器常保最新狀態。</p>
+      </div>
+      <div class="feat-card">
+        <div class="ico">🔐</div>
+        <h3>完善資安防護</h3>
+        <p>內建多重資安機制，保護列印與掃描文件，符合企業辦公的資訊安全需求。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 服務方案 -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>服務方案</h2>
+      <p>購買、租賃、維修耗材，一站式為您服務</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="tag">SALES ／ 銷售</div>
+        <h3>整機購買</h3>
+        <ul>
+          <li>原廠全新機／優質中古機</li>
+          <li>到府安裝與教學設定</li>
+          <li>依印量需求建議最適機型</li>
+          <li>歡迎來電索取報價</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="tag">LEASE ／ 出租</div>
+        <h3>機器租賃</h3>
+        <ul>
+          <li>免高額購機成本，月租輕鬆用</li>
+          <li>租期彈性，方案可量身規劃</li>
+          <li>含耗材與定期保養</li>
+          <li>適合短期專案與成長型企業</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="tag">SERVICE ／ 維修</div>
+        <h3>維修・耗材</h3>
+        <ul>
+          <li>專業技師到府維修檢測</li>
+          <li>原廠碳粉、感光鼓等耗材供應</li>
+          <li>定期保養，延長機器壽命</li>
+          <li>快速到場，降低停機時間</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 詳細規格表 -->
+<section class="spectable">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>詳細規格</h2>
+      <p>RICOH IM C6000 主要技術規格一覽</p>
+    </div>
+    <table>
+      <tr><th>機型類別</th><td>A3 彩色雷射多功能事務機（影印／列印／掃描／選配傳真）</td></tr>
+      <tr><th>連續輸出速度</th><td>彩色／黑白 每分鐘 60 張（60 ppm）</td></tr>
+      <tr><th>列印解析度</th><td>最高 1200 × 1200 dpi</td></tr>
+      <tr><th>掃描功能</th><td>單通道送稿器（SPDF）單次走紙雙面掃描，最高 240 ipm</td></tr>
+      <tr><th>標準進紙容量</th><td>最高可達 4,700 張</td></tr>
+      <tr><th>主要功能</th><td>影印、列印、掃描、選配傳真</td></tr>
+      <tr><th>更新技術</th><td>RICOH Always Current Technology（ACT）線上更新平台</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 聯絡 -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>想了解更多？立即與我們聯繫</h2>
+    <p>無論是購買、租賃或維修服務，歡迎來電或加 LINE，由專人為您報價與規劃。</p>
+    <div class="contact-btns">
+      <a href="tel:0287919110" class="btn btn-white">📞 市話 (02)8791-9110</a>
+      <a href="tel:0914151818" class="btn btn-white">📱 手機 0914-151-818</a>
+      <a href="https://line.me/ti/p/~0914151818" class="btn btn-ghost">💬 LINE：0914151818</a>
+      <a href="mailto:sun7471818@gmail.com" class="btn btn-ghost">✉️ Email 洽詢</a>
+    </div>
+    <div class="contact-info">
+      <div>🏢 11471 台北市內湖區新明路 77 號</div>
+      <div>✉️ sun7471818@gmail.com</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo">RICOH <span style="color:var(--brand)">IM C6000</span></div>
+    <div>RICOH IM C6000 彩色多功能事務機 ｜ 銷售・出租・維修服務</div>
+    <div style="margin-top:10px;line-height:1.9">
+      🏢 11471 台北市內湖區新明路 77 號<br>
+      📞 (02)8791-9110　📱 0914-151-818　💬 LINE：0914151818<br>
+      ✉️ sun7471818@gmail.com　｜　統一編號：89470882
+    </div>
+    <div style="margin-top:10px">© 2026 版權所有。本頁規格僅供參考，實際以原廠公告為準。</div>
+  </div>
+</footer>
+
+</body>
+</html>
