@@ -30,6 +30,8 @@
   .hv11:hover{background:#e9ebef !important;transition:all .2s ease}
   .hv12:hover{border-color:#fff !important;transition:all .2s ease}
   .hv13:hover{border-color:#fff !important;transition:all .2s ease}
+  .hvimg img{transition:transform .3s ease}
+  .hvimg:hover img{transform:scale(1.03)}
   @media(max-width:720px){
     h1{font-size:34px !important}
     nav{gap:18px !important;font-size:14px !important}
@@ -74,9 +76,10 @@
       </div>
       <div style="flex:1 1 380px;min-width:300px">
         <div style="background:#fff;border:1px solid #e9ebef;border-radius:16px;padding:18px;box-shadow:0 24px 60px rgba(20,30,50,.08)">
-          <div style="border-radius:10px;overflow:hidden;background:#f6f7f9">
+          <a href="#video" title="觀看產品影片介紹" style="position:relative;display:block;border-radius:10px;overflow:hidden;background:#f6f7f9" class="hvimg">
             <img src="machine.png" alt="RICOH IM C6000 彩色多功能事務機實機照片" width="1100" height="1038" style="width:100%;height:auto;display:block">
-          </div>
+            <span style="position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:7px;background:rgba(215,0,15,.95);color:#fff;font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px;box-shadow:0 6px 18px rgba(215,0,15,.4)"><span style="width:0;height:0;border-left:9px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent"></span>看影片介紹</span>
+          </a>
           <div style="display:flex;align-items:baseline;justify-content:space-between;padding:16px 8px 6px">
             <div>
               <div style="font-weight:800;font-size:17px">RICOH IM C6000</div>
